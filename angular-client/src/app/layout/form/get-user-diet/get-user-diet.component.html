@@ -1,0 +1,58 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Diet'" [icon]="'fa-user-circle-o'"></app-page-header>
+  <div class="row">
+    <div class="card-body table-responsive">
+      <h1>Breakfast</h1>
+      <table class="table table-hover table-striped sortable">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Food</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let breakfast of breakfasts;">
+            <tr>
+              <td>{{getDay(breakfast.id)}}</td>
+              <td>{{breakfast.diet}}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+      <h1>Lunch</h1>
+      <table class="table table-hover table-striped sortable">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Food</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let lunch of lunches;">
+            <tr>
+              <td>{{getDay(lunch.id)}}</td>
+              <td>{{lunch.diet}}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+      <h1>Dinner</h1>
+      <table class="table table-hover table-striped sortable">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Food</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let dinner of dinners;">
+            <tr>
+              <td>{{getDay(dinner.id)}}</td>
+              <td>{{dinner.diet}}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

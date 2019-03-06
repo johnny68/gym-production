@@ -1,0 +1,138 @@
+{
+  "weightloss": [{
+    "breakfast": [{
+      "id": "1",
+      "diet": "Sambar with brown rice idli"
+    }, {
+      "id": "2",
+      "diet": "Chana dal pancakes with mixed vegetables and a glass of milk"
+    }, {
+      "id": "3",
+      "diet": "Apple cinnamon porridge made with milk and topped with sliced almonds"
+    }, {
+      "id": "4",
+      "diet": "Yogurt with sliced fruits and sunflower seeds"
+    }, {
+      "id": "5",
+      "diet": "Vegetable dalia and a glass of milk"
+    }, {
+      "id": "6",
+      "diet": "Multigrain parathas with avocado and sliced papaya"
+    }, {
+      "id": "7",
+      "diet": "Buckwheat porridge with sliced mango"
+    }],
+    "lunch": [{
+      "id": "1",
+      "diet": "Whole-grain roti with mixed-vegetable curry"
+    }, {
+      "id": "2",
+      "diet": "Chickpea curry with brown rice"
+    }, {
+      "id": "3",
+      "diet": "Whole-grain roti with tofu and mixed vegetables"
+    }, {
+      "id": "4",
+      "diet": "Whole-grain roti with vegetable subji"
+    }, {
+      "id": "5",
+      "diet": "Vegetable sambar with brown rice"
+    }, {
+      "id": "6",
+      "diet": "Large salad with rajma curry and quinoa"
+    }, {
+      "id": "7",
+      "diet": "Vegetable soup with whole-grain roti"
+    }],
+    "dinner": [{
+      "id": "1",
+      "diet": "Tofu curry with mixed vegetables and a fresh spinach salad"
+    }, {
+      "id": "2",
+      "diet": "Khichdi with sprout salad"
+    }, {
+      "id": "3",
+      "diet": "Palak paneer with brown rice and vegetables"
+    }, {
+      "id": "4",
+      "diet": "Chana masala with basmati rice and green salad"
+    }, {
+      "id": "5",
+      "diet": "Tofu curry with potato and mixed vegetables"
+    }, {
+      "id": "6",
+      "diet": "Lentil pancakes with tofu tikka masala"
+    }, {
+      "id": "7",
+      "diet": "Masala-baked tofu with vegetable curry"
+    }]
+  }],
+  "weightgain": [{
+    "breakfast": [{
+      "id": "1",
+      "diet": "3 Scrambled Eggs, 3 slices Wheat Toast with butter, Glass of Orange Juice"
+    }, {
+      "id": "2",
+      "diet": "4 slices Whole-Wheat Bread, 3 tbsp Peanut Butter, 1 Banana, 3 tsp Honey"
+    }, {
+      "id": "3",
+      "diet": "65g Oats, 300ml Whole Milk, 1 Banana, 25g Nuts, 2 tsp Honey, Glass of Orange Juice"
+    }, {
+      "id": "4",
+      "diet": "50g Granola, 30g Oats, 150ml Whole Milk, 25g Nuts & 25g Raisins, Glass of Orange Juice"
+    }, {
+      "id": "5",
+      "diet": "50g Granola, 30g Oats, 150ml Whole Milk, 25g Nuts & 25g Raisins, Glass of Orange Juice"
+    }, {
+      "id": "6",
+      "diet": "3 Poached Eggs, 2 Slices Whole-Wheat Toast, buttered, Mushroom & Tomatoes in 1 tbsp vegetable Oil grilled, Glass of Orange Juice"
+    }, {
+      "id": "7",
+      "diet": "Pancakes (2 Eggs, 40g Whole-Wheat Flour, 30g Ground Almonds, 150ml Whole Milk, 1 Mashed Banana, Toppings: Fruit, 50g Greek Yogurt, 2 tsp Honey, 1 glass Prune Juice"
+    }],
+    "lunch": [{
+      "id": "1",
+      "diet": "Whole-grain roti with mixed-vegetable curry"
+    }, {
+      "id": "2",
+      "diet": "Chickpea curry with brown rice"
+    }, {
+      "id": "3",
+      "diet": "Whole-grain roti with tofu and mixed vegetables"
+    }, {
+      "id": "4",
+      "diet": "Whole-grain roti with vegetable subji"
+    }, {
+      "id": "5",
+      "diet": "Vegetable sambar with brown rice"
+    }, {
+      "id": "6",
+      "diet": "Large salad with rajma curry and quinoa"
+    }, {
+      "id": "7",
+      "diet": "Vegetable soup with whole-grain roti"
+    }],
+    "dinner": [{
+      "id": "1",
+      "diet": "Tofu curry with mixed vegetables and a fresh spinach salad"
+    }, {
+      "id": "2",
+      "diet": "Khichdi with sprout salad"
+    }, {
+      "id": "3",
+      "diet": "Palak paneer with brown rice and vegetables"
+    }, {
+      "id": "4",
+      "diet": "Chana masala with basmati rice and green salad"
+    }, {
+      "id": "5",
+      "diet": "Tofu curry with potato and mixed vegetables"
+    }, {
+      "id": "6",
+      "diet": "Lentil pancakes with tofu tikka masala"
+    }, {
+      "id": "7",
+      "diet": "Masala-baked tofu with vegetable curry"
+    }]
+  }]
+}

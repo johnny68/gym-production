@@ -1,0 +1,55 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Billing'" [icon]="'fa-edit'"></app-page-header>
+  <div class="row" [formGroup]="billing_form">
+    <h4>Bill for New Member, {{username}} Gym Membership ID is {{user_id}}</h4>
+    <div class="col-sm-6">
+      <div class="form-group">
+      </div>
+      <div class="form-group">
+        <label>Member Plan Type</label>
+        <select formControlName="planType" #plan [ngModel]="planType" class="form-control" (change) = "selectedPlan(plan.value)" >
+          <option *ngFor="let planType of plans" [value]="planType.id">{{planType.memberPlan}}</option>
+        </select>
+        <span class="text-danger" *ngIf="billing_form.controls['planType'].hasError('required') && (billing_form.controls['planType'].dirty || billing_form.controls['planType'].touched)">
+          This field is required
+        </span>
+      </div>
+      <div class="form-group">
+          <div class="row">
+            <label>Choose Payment Method</label>
+            <div class="radio">
+              <label>
+                <input formControlName="payment" #cash type="radio" (click)="getPaymentMethod(cash.value)" [ngModel]="payment" style="margin-left: 10px;" name="payment" id="optionsRadios1" value="1">
+                Cash
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input formControlName="payment" #paytm type="radio" style="margin-left: 10px;" (click)="getPaymentMethod(paytm.value)" ng-model="payment" name="payment" id="optionsRadios1" value="2">
+                Paytm
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input formControlName="payment" #transfer type="radio" style="margin-left: 10px;" (click)="getPaymentMethod(transfer.value)" ng-model="payment" name="payment" id="optionsRadios1" value="3">
+                Online Transfer
+              </label>
+            </div>
+            <span class="text-danger" *ngIf="billing_form.controls['payment'].hasError('required') && (billing_form.controls['payment'].dirty || billing_form.controls['payment'].touched)">
+              This field is required
+            </span>
+          </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <h4>Total Amount to be paid by customer : <b>{{totalAmount}}</b></h4>
+      </div>
+      <button (click)="onSave()" style="margin-right: 20px;" [disabled]="billing_form.invalid" class="btn btn-success">Confirm Bill</button>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button (click)="onSave()" style="margin-right: 20px;" [disabled]="billing_form.invalid" class="btn btn-success">Confirm Bill</button>
+  </div>
+</div>

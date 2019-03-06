@@ -1,0 +1,87 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'User'" [icon]="'fa-user-circle-o'"></app-page-header>
+
+  <div class="form-group">
+    <button (click)="onGetBill()" style="margin-right: 20px;" class="btn btn-success">Get Bills</button>
+  </div>
+  <div class="row">
+      <div class="col-lg-6">
+          <div class="form-group">
+              <h4>Member Name</h4>
+              <p class="form-control-static alert-primary">{{name}}</p>
+          </div>
+          <div class="form-group">
+              <h4>Member Email</h4>
+              <p class="form-control-static alert-primary">{{username}}</p>
+          </div>
+          <div class="form-group">
+              <h4>Member Aaddhar</h4>
+              <p class="form-control-static alert-primary">{{user[0].user_aaddhar}}</p>
+          </div>
+          <div class="form-group">
+              <h4>Street Address</h4>
+              <p class="form-control-static alert-primary">{{user[0].user_address}}</p>
+          </div>
+          <div class="form-group">
+              <h4>City</h4>
+              <p class="form-control-static alert-primary">{{city.name}}</p>
+          </div>
+          <div class="form-group">
+              <h4>State</h4>
+              <p class="form-control-static alert-primary">{{city.state}}</p>
+          </div>
+          <div class="form-group">
+              <h4>Pincode</h4>
+              <p class="form-control-static alert-primary">{{user[0].user_pincode}}</p>
+          </div>
+          <div class="form-group">
+              <h4>Mobile Number</h4>
+              <p class="form-control-static alert-primary">{{user[0].user_mobile_number}}</p>
+          </div>
+          <div class="form-group">
+              <h4>Blood Group</h4>
+              <p class="form-control-static alert-primary">{{user[0].user_blood_group}}</p>
+          </div>
+         
+        </div>
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                <h4>Member Birthday</h4>
+                <p class="form-control-static alert-primary">{{user[0].user_date_of_birth | date:"dd-MM-yyyy"}}</p>
+            </div>
+            <div class="form-group">
+                <h4>Gender</h4>
+                <p class="form-control-static alert-primary">{{getGender(user[0].user_gender)}}</p>
+            </div>
+            <div class="form-group">
+                <h4>Height</h4>
+                <p class="form-control-static alert-primary">{{user[0].user_height}} CMs</p>
+            </div>
+            <div class="form-group">
+                <h4>Weight</h4>
+                <p class="form-control-static alert-primary">{{user[0].user_weight}} Kilos</p>
+            </div>
+            <div class="form-group">
+                <h4>Purpose</h4>
+                <p class="form-control-static alert-primary">{{getPurpose(user[0].user_purpose)}}</p>
+            </div>
+            <div class="form-group">
+                <h4>Training</h4>
+                <p class="form-control-static alert-primary">{{getTrainingType(user[0].user_training_type)}}</p>
+            </div>
+            <div class="form-group">
+                <h4>Medical History</h4>
+                <p class="form-control-static alert-primary">{{user[0].user_medical_history}}</p>
+            </div>
+            <div class="form-group">
+                <h4>Previous Gym</h4>
+                <p class="form-control-static alert-primary">{{user[0].user_past_gym}}</p>
+            </div>
+            <div class="form-group">
+                <h4>If any usuage of Protien in the Past</h4>
+                <p class="form-control-static alert-primary">{{user[0].user_past_protien}}</p>
+            </div>
+        </div>
+  </div>
+</div>

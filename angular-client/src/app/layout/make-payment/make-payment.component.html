@@ -1,0 +1,75 @@
+<div>
+  <form class="form-inline">
+    <input #box (keyup.enter)="onEnter(box.value)" class="form-control mr-sm-2" type="text" placeholder="{{ 'Search' | translate }}">
+  </form>
+</div>
+<div>
+  <h1>Bill Details</h1>
+  <div class="card-body table-responsive">
+    <table class="table table-hover table-striped sortable">
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>User Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let data of datas; let index = index">
+          <tr (click)="gotoUser(data)">
+            <td>{{data.user_id}}</td>
+            <td>{{data.user_name}}</td>
+            <td>
+              <button type="button" class="btn btn-outline-primary" (click)="rowsControls[index].isCollapsed = !rowsControls[index].isCollapsed"
+                [attr.aria-expanded]="'collapse_' + data_id">
+                Make Payment
+              </button>
+              <div id="collapse_{{ data.user_id }}" [ngbCollapse]="rowsControls[index].isCollapsed">
+                <div class="card">
+                  <div class="card-body">
+
+                    <div class="form-group">
+                      <div>
+                        <input #month type="number" name="months" id="months" [(ngModel)]="months" (ngModelChange)="getAmount(month.value)">
+                        <p>Number of Months payment is being made : {{months}}</p>
+                      </div>
+                      <div class="row">
+                        <label>Choose Payment Method</label>
+                        <div class="radio">
+                          <label>
+                            <input [disabled]="true" #cash type="radio" (click)="getPaymentMethod(cash.value)"
+                              [ngModel]="payment" style="margin-left: 10px;" name="payment" id="optionsRadios1" value="1">
+                            Cash
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input [disabled]="true" #paytm type="radio" style="margin-left: 10px;" (click)="getPaymentMethod(paytm.value)"
+                              ng-model="payment" name="payment" id="optionsRadios1" value="2">
+                            Paytm
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input [disabled]="true" #transfer type="radio" style="margin-left: 10px;" (click)="getPaymentMethod(transfer.value)"
+                              ng-model="payment" name="payment" id="optionsRadios1" value="3">
+                            Online Transfer
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <h4>Total Amount to be paid by customer : <b>{{totalAmount}}</b></h4>
+                    </div>
+                    <div>
+                        <button (click)="onSave()" style="margin-right: 20px;" class="btn btn-success">Confirm Payment</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>

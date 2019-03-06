@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-lg-6">
+    <h1>Plan Details</h1>
+    <div class="form-group">
+      <h4>Member Membership Plan</h4>
+      <p class="form-control-static alert-primary">{{getPlan(user_plan_number)}}</p>
+    </div>
+    <div class="form-group">
+      <h4>Member Join Date</h4>
+      <p class="form-control-static alert-primary">{{user_join_date | date:"dd-MM-yyyy"}}</p>
+    </div>
+    <div class="form-group">
+      <h4>Member Plan Expiration Date</h4>
+      <p class="form-control-static alert-primary">{{user_due_date | date:"dd-MM-yyyy"}}</p>
+    </div>
+  </div>
+</div>
+  <div>
+    <h1>Bill Details</h1>
+    <div class="card-body table-responsive">
+        <table class="table table-hover table-striped sortable">
+          <thead>
+            <tr>
+              <th>Payment Menthod</th>
+              <th>Billing Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let data of data[1];"  >
+              <tr>
+                <td>{{data.user_payment_method}}</td>
+                <td>{{data.billing_time | date:'medium'}}</td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+  </div>

@@ -1,0 +1,70 @@
+{
+  "data": [{
+    "breakfast": [{
+      "id": "1",
+      "diet": "Sambar with brown rice idli"
+    }, {
+      "id": "2",
+      "diet": "Chana dal pancakes with mixed vegetables and a glass of milk"
+    }, {
+      "id": "3",
+      "diet": "Apple cinnamon porridge made with milk and topped with sliced almonds"
+    }, {
+      "id": "4",
+      "diet": "Yogurt with sliced fruits and sunflower seeds"
+    }, {
+      "id": "5",
+      "diet": "Vegetable dalia and a glass of milk"
+    }, {
+      "id": "6",
+      "diet": "Multigrain parathas with avocado and sliced papaya"
+    }, {
+      "id": "7",
+      "diet": "Buckwheat porridge with sliced mango"
+    }],
+    "lunch": [{
+      "id": "1",
+      "diet": "Whole-grain roti with mixed-vegetable curry"
+    }, {
+      "id": "2",
+      "diet": "Chickpea curry with brown rice"
+    }, {
+      "id": "3",
+      "diet": "Whole-grain roti with tofu and mixed vegetables"
+    }, {
+      "id": "4",
+      "diet": "Whole-grain roti with vegetable subji"
+    }, {
+      "id": "5",
+      "diet": "Vegetable sambar with brown rice"
+    }, {
+      "id": "6",
+      "diet": "Large salad with rajma curry and quinoa"
+    }, {
+      "id": "7",
+      "diet": "Vegetable soup with whole-grain roti"
+    }],
+    "dinner": [{
+      "id": "1",
+      "diet": "Tofu curry with mixed vegetables and a fresh spinach salad"
+    }, {
+      "id": "2",
+      "diet": "Khichdi with sprout salad"
+    }, {
+      "id": "3",
+      "diet": "Palak paneer with brown rice and vegetables"
+    }, {
+      "id": "4",
+      "diet": "Chana masala with basmati rice and green salad"
+    }, {
+      "id": "5",
+      "diet": "Tofu curry with potato and mixed vegetables"
+    }, {
+      "id": "6",
+      "diet": "Lentil pancakes with tofu tikka masala"
+    }, {
+      "id": "7",
+      "diet": "Masala-baked tofu with vegetable curry"
+    }]
+  }]
+}

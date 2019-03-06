@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "Regular Training"
+        },
+        {
+            "id": "2",
+            "type": "Personal Training"
+        },
+        {
+            "id": "3",
+            "type": "Dance"
+        },
+        {
+            "id": "4",
+            "type": "Yoga"
+        }
+        ,{
+            "id": "5",
+            "type": "Cross Fit"
+        }
+    ]
+}

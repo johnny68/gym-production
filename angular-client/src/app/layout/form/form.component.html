@@ -1,0 +1,252 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Forms'" [icon]="'fa-edit'"></app-page-header>
+  <div class="row" [formGroup]="register_form">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <h4>Basic Personal Details</h4>
+        <label>Gym Member Name</label>
+        <input formControlName="username" [(ngModel)]="username" name="name" type="text" class="form-control" required>
+        <span class="text-danger" *ngIf="register_form.controls['username'].hasError('required') && (register_form.controls['username'].dirty || register_form.controls['username'].touched)">
+          This field is required
+        </span>
+      </div>
+      <div class="form-group">
+        <label>Photo</label>
+        <input (change) = "onSelected($event)" type="file" class="form-control">
+
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input formControlName="useremail" [(ngModel)]="useremail" type="email" class="form-control" required>
+        <span class="text-danger" *ngIf="register_form.controls['useremail'].hasError('required') && (register_form.controls['useremail'].dirty || register_form.controls['useremail'].touched)">
+          This field is required
+        </span>
+        <span class="text-danger" *ngIf="register_form.controls['useremail'].hasError('pattern') && (register_form.controls['useremail'].dirty || register_form.controls['useremail'].touched)">
+          Please enter valid email address
+        </span>
+      </div>
+      <div class="form-group">
+        <label> Aadhaar</label>
+        <input formControlName="aadhaar" [(ngModel)]="aadhaar" type="number" class="form-control" placeholder="Enter only Numbers">
+        <span class="text-danger" *ngIf="register_form.controls['aadhaar'].hasError('required') && (register_form.controls['aadhaar'].dirty || register_form.controls['aadhaar'].touched)">
+          This field is required
+        </span>
+      </div>
+      <div class="form-group">
+        <label>Address</label>
+        <input formControlName="address" [(ngModel)]="address" type="text" class="form-control" placeholder="Enter only Street Address"
+          required>
+        <span class="text-danger" *ngIf="register_form.controls['address'].hasError('required') && (register_form.controls['address'].dirty || register_form.controls['address'].touched)">
+          This field is required
+        </span>
+      </div>
+      <div class="form-group">
+        <label>City</label>
+        <select formControlName="city" #selected [ngModel]="city" (change)="citySelectedValue(selected.value)" class="form-control"
+          required>
+          <option *ngFor="let city of cities | orderBy: 'name':false" [value]="city.id">{{city.name}}</option>
+        </select>
+        <span class="text-danger" *ngIf="register_form.controls['city'].hasError('required') && (register_form.controls['city'].dirty || register_form.controls['city'].touched)">
+          This field is required
+        </span>
+
+      </div>
+      <div class="form-group">
+        <label>Pincode</label>
+        <input formControlName="pincode" [(ngModel)]="pincode" type="number" class="form-control" placeholder="Enter only Pincode">
+        <span class="text-danger" *ngIf="register_form.controls['pincode'].hasError('required') && (register_form.controls['pincode'].dirty || register_form.controls['pincode'].touched)">
+          This field is required
+        </span>
+      </div>
+      <div class="form-group">
+        <label>Mobile Number</label>
+        <input formControlName="mobileNumber" [(ngModel)]="mobileNumber" type="number" class="form-control" placeholder="Enter only Mobile Number">
+        <span class="text-danger" *ngIf="register_form.controls['mobileNumber'].hasError('required') && (register_form.controls['mobileNumber'].dirty || register_form.controls['mobileNumber'].touched)">
+          This field is required
+        </span>
+      </div>
+      <h4>Membership Details</h4>
+      <div class="form-group">
+        <label>Training Type</label>
+        <select formControlName="training" #training [ngModel]="singleType" (change)="trainingSelectedValue(training.value)"
+          class="form-control">
+          <option *ngFor="let singleType of trainingtypes" [value]="singleType.id">{{singleType.type}}</option>
+        </select>
+        <span class="text-danger" *ngIf="register_form.controls['training'].hasError('required') && (register_form.controls['training'].dirty || register_form.controls['training'].touched)">
+          This field is required
+        </span>
+      </div>
+      <div class="form-group">
+        <label>Purpose of Joining The Gym</label>
+        <select formControlName="purpose" #purpose [ngModel]="singlePurpose" (change)="purposeSelectedValue(purpose.value)"
+          class="form-control">
+          <option *ngFor="let singlePurpose of purposes" [value]="singlePurpose.id">{{singlePurpose.type}}</option>
+        </select>
+        <span class="text-danger" *ngIf="register_form.controls['purpose'].hasError('required') && (register_form.controls['purpose'].dirty || register_form.controls['purpose'].touched)">
+          This field is required
+        </span>
+      </div>
+      <div class="text-left">
+        <button style="margin-left: 10px; margin-top: 20px;" class="btn btn-danger">Cancel</button>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <h4>Physical Details</h4>
+      <div class="form-group">
+        <label>Enter Birthday</label>
+        <div class="input-group">
+          <ngb-datepicker formControlName="birthday" #dp [(ngModel)]="datemodel" (navigate)="$event.next"></ngb-datepicker>
+          <span class="text-danger" *ngIf="register_form.controls['birthday'].hasError('required') && (register_form.controls['birthday'].dirty || register_form.controls['birthday'].touched)">
+            This field is required
+          </span>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <label>Choose Gender</label>
+          <div class="radio">
+            <label>
+              <input formControlName="gender" #male type="radio" [ngModel]="gender" style="margin-left: 100px;" name="gender"
+                id="optionsRadios1" value="1" (click)="getGender(male.value)">
+              Male
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input formControlName="gender" #female type="radio" style="margin-left: 100px;" ng-model="gender"
+                name="gender" id="optionsRadios1" value="2" (click)="getGender(female.value)">
+              Female
+            </label>
+            <span class="text-danger" *ngIf="register_form.controls['gender'].hasError('required') && (register_form.controls['gender'].dirty || register_form.controls['gender'].touched)">
+              This field is required
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Memeber Blood Type</label>
+        <select formControlName="bloodtype" #blood [ngModel]="bloodtype" (change)="bloodSelectedValue(blood.value)"
+          class="form-control">
+          <option *ngFor="let bloodtype of bloodTypes" [value]="bloodtype.type">{{bloodtype.type}}</option>
+        </select>
+        <span class="text-danger" *ngIf="register_form.controls['bloodtype'].hasError('required') && (register_form.controls['bloodtype'].dirty || register_form.controls['bloodtype'].touched)">
+          This field is required
+        </span>
+      </div>
+      <div class="form-group input-group">
+        <input formControlName="height" [(ngModel)]="height" type="number" class="form-control" placeholder="Enter in cm (CMs)">
+        <span class="text-danger" *ngIf="register_form.controls['height'].hasError('required') && (register_form.controls['height'].dirty || register_form.controls['height'].touched)">
+          This field is required
+        </span>
+      </div>
+      <div class="form-group input-group">
+        <input formControlName="weight" [(ngModel)]="weight" type="number" class="form-control" placeholder="Enter in Kg (Kilos)">
+        <span class="text-danger" *ngIf="register_form.controls['weight'].hasError('required') && (register_form.controls['weight'].dirty || register_form.controls['weight'].touched)">
+          This field is required
+        </span>
+      </div>
+      <div class="form-group">
+        <label>Medical History</label>
+        <textarea formControlName="medicalHistory" [(ngModel)]="medicalHistory" class="form-control" rows="2" maxlength="200"
+          placeholder="Give Your Medical History, Limit is 200 Characters Only"></textarea>
+        <span class="text-danger" *ngIf="register_form.controls['medicalHistory'].hasError('required') && (register_form.controls['medicalHistory'].dirty || register_form.controls['medicalHistory'].touched)">
+          This field is required
+        </span>
+      </div>
+      <div class="form-group">
+        <label>Did you go to any other gym ?</label>
+        <input formControlName="previousGym" [(ngModel)]="previousGym" type="text" class="form-control" placeholder="If No, Type N/A">
+        <span class="text-danger" *ngIf="register_form.controls['previousGym'].hasError('required') && (register_form.controls['previousGym'].dirty || register_form.controls['previousGym'].touched)">
+          This field is required
+        </span>
+      </div>
+      <div class="form-group">
+        <label>Do You Take any Protien ? Or Did you used to take protiens?</label>
+        <input formControlName="pastProtien" [(ngModel)]="pastProtien" type="text" class="form-control" placeholder="If No, Type N/A">
+        <span class="text-danger" *ngIf="register_form.controls['pastProtien'].hasError('required') && (register_form.controls['pastProtien'].dirty || register_form.controls['pastProtien'].touched)">
+          This field is required
+        </span>
+      </div>
+      <div class="text-right">
+        <button (click)="onSave(content)" style="margin-right: 20px;" [disabled]="register_form.invalid" class="btn btn-success">Save
+          & Next</button>
+      </div>
+    </div>
+  </div>
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title text-danger">Please Check the data filled, Changes cannot be made again!</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-sm-6">
+          <h4>Basic Details</h4>
+          <hr>
+          Gym Member Name : <span class="text-success">{{username}}</span>
+          <hr>
+          <hr>
+          Gym Member Email Address : <span class="text-success">{{useremail}}</span>
+          <hr>
+          <hr>
+          Gym Member Aadhaar : <span class="text-success">{{aadhaar}}</span>
+          <hr>
+          <hr>
+          Gym Member Address : <span class="text-success">{{address}}</span>
+          <hr>
+          <hr>
+          Gym Member City : <span class="text-success">{{city1.name}}</span>
+          <hr>
+          <hr>
+          Gym Member State : <span class="text-success">{{city1.state}}</span>
+          <hr>
+          <hr>
+          Gym Member Pincode : <span class="text-success">{{pincode}}</span>
+          <hr>
+          <hr>
+          Gym Member Mobile Number : <span class="text-success">{{mobileNumber}}</span>
+          <hr>
+          <h4>Membership Details</h4>
+          <hr>
+          Gym Member Training Type : <span class="text-success">{{getTrainingType(trainingNumber)}}</span>
+          <hr>
+          <hr>
+          Gym Member's Purpose of joining the gym : <span class="text-success">{{getPurpose(purposeNumber)}}</span>
+          <hr>
+        </div>
+        <div class="col-sm-6">
+            <h4>Personal Details</h4>
+            <hr>
+            Gym Member Birthday : <span class="text-success">{{birthday}}</span>
+            <hr>
+            <hr>
+            Gym Memeber Gender : <span class="text-success">{{getGenderForModal(gender)}}</span>
+            <hr>
+            <hr>
+            Gym Member Blood Group : <span class="text-success">{{bloodGroup}}</span>
+            <hr>
+            <hr>
+            Gym Member Height : <span class="text-success">{{height}}</span>
+            <hr>
+            <hr>
+            Gym Member Weight : <span class="text-success">{{weight}}</span>
+            <hr>
+            <hr>
+            Gym Member Medical Histroy: <span class="text-success">{{medicalHistory}}</span>
+            <hr>
+            <hr>
+            Gym Member's Previous Gyms : <span class="text-success">{{previousGym}}</span>
+            <hr>
+            <hr>
+            Gym Member's Protien Usage History : <span class="text-success">{{pastProtien}}</span>
+            <hr>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn-success" (click)="modal.close('Close click')">Filled Data is Correct</button>
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,32 @@
+<div class="login-page" [@routerTransition]>
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <img class="user-avatar" src="assets/images/logo.png" width="150px" />
+            <h1>Royal Fitness Club</h1>
+            <form role="form">
+                <div [formGroup]="formgroup">
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="admin_Name" formControlName="admin_Name" class="form-control input-underline input-lg"  placeholder="{{ 'Full Name' | translate }}">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="admin_userName" formControlName="admin_userName" class="form-control input-underline input-lg"  placeholder="{{ 'UserName' | translate }}">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="admin_email" formControlName="admin_email" class="form-control input-underline input-lg"  placeholder="{{ 'Email' | translate }}">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" [(ngModel)]="password" formControlName="password" class="form-control input-underline input-lg"  placeholder="{{ 'Password' | translate }}">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" [(ngModel)]="repeat_password" formControlName="repeat_password" class="form-control input-underline input-lg"  placeholder="{{ 'Repeat Password' | translate }}">
+                    </div>
+                </div>
+                <a class="btn rounded-btn" [routerLink]="['/dashboard']" (click)="onSignup()">{{ 'Register' | translate }}</a>&nbsp;
+                <a class="btn rounded-btn" [routerLink]="['/login']">{{ 'Log in' | translate }}</a>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+{
+    "plansType" : [
+        {
+            "id": "1",
+            "memberPlan": "Monthly Membership"
+        },
+        {
+            "id": "2",
+            "memberPlan": "2 - Monthly Membership"
+        },
+        {
+            "id": "3",
+            "memberPlan": "3 - Monthly Membership"
+        },
+        {
+            "id": "4",
+            "memberPlan": "Bi-Annual Membership (6 Months)"
+        },
+        {
+            "id": "5",
+            "memberPlan": "Yearly Membership (12 Months)"
+        },
+        {
+            "id": "6",
+            "memberPlan": "Couple's Bi-Annual Membership"
+        },
+        {
+            "id": "7",
+            "memberPlan": "Couple's Annual Membership"
+        },
+        {
+            "id": "8",
+            "memberPlan": "Group of 5 Members"
+        }
+    ]
+}

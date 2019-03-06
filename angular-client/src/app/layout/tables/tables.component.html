@@ -1,0 +1,25 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Users'" [icon]="'fa-user-circle-o'"></app-page-header>
+  <div class="row">
+    <div class="card-body table-responsive">
+      <table class="table table-hover table-striped sortable">
+        <thead>
+          <tr>
+            <th>Gym Member ID</th>
+            <th>Gym Member Email</th>
+            <th>Gym Member Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let user of users;"  >
+            <tr [ngClass] = "user.user_active === 'Y' ? 'table-success' : 'table-danger'" (click)="gotoUser(user)">
+              <td>{{user.user_id}}</td>
+              <td>{{user.user_email}}</td>
+              <td>{{user.user_name}}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
